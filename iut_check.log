@@ -1,0 +1,63 @@
+Kish effective sample size from pilot draws
+  screening, per state       n=  250  median n_eff=  130.5  ratio 0.52
+  confirmatory, per state    n= 5000  median n_eff= 2512.6  ratio 0.50
+
+MARGINAL (architecture-specific claim)
+  stage 1 TUNE: allocation 0.021000 per path, tuning target 0.70 x allocation = 0.014700
+    power   screen   nominal 0.012054  critical value 0.952248  (2 search steps)
+    power   confirm  nominal 0.012054  critical value 0.913146  (2 search steps)
+    fpr     screen   nominal 0.012054  critical value 0.015378  (2 search steps)
+    fpr     confirm  nominal 0.014700  critical value 0.040877  (1 search step)
+    falseCO screen   nominal 0.012054  critical value 0.015180  (2 search steps)
+    falseCO confirm  nominal 0.012054  critical value 0.040643  (2 search steps)
+  stage 2 FREEZE: the six critical values above are now fixed
+  stage 3 AUDIT on fresh samples, seed 7770001, no retuning permitted
+    boundary stage        reps     size    CP U95  <=alloc
+    power   screen   120,000   0.0113    0.0118      yes
+    power   confirm   50,000   0.0115    0.0123      yes
+    fpr     screen   120,000   0.0121    0.0126      yes
+    fpr     confirm   50,000   0.0147    0.0156      yes
+    falseCO screen   120,000   0.0114    0.0119      yes
+    falseCO confirm   50,000   0.0119    0.0127      yes
+    worst component CP U95 0.0156 against allocation 0.021000: all clear
+  assembled screen-escalate-retest, EVERY boundary type, at the supremum over J:
+    power   sup over J  false pass 0.0224  CP U95 0.0235  vs 0.05000: clears
+    fpr     sup over J  false pass 0.0255  CP U95 0.0267  vs 0.05000: clears
+    falseCO sup over J  false pass 0.0231  CP U95 0.0242  vs 0.05000: clears
+    largest end-to-end CP U95 over all three boundaries: 0.0267 against 0.05000: clears
+  design-power margin for an 80% chance of passing all 1728 bounds
+  (weighted simulation; the 1728 bounds treated as independent)
+    power   3.16 pp
+    fpr     2.22 pp
+    falseCO 2.22 pp
+
+PROJECT-LEVEL (family-wise 0.05 over 8 architectures)
+  stage 1 TUNE: allocation 0.003125 per path, tuning target 0.70 x allocation = 0.002187
+    power   screen   nominal 0.001794  critical value 0.962919  (2 search steps)
+    power   confirm  nominal 0.001471  critical value 0.916796  (3 search steps)
+    fpr     screen   nominal 0.001794  critical value 0.009081  (2 search steps)
+    fpr     confirm  nominal 0.001471  critical value 0.037872  (3 search steps)
+    falseCO screen   nominal 0.001794  critical value 0.009108  (2 search steps)
+    falseCO confirm  nominal 0.001471  critical value 0.037801  (3 search steps)
+  stage 2 FREEZE: the six critical values above are now fixed
+  stage 3 AUDIT on fresh samples, seed 7770001, no retuning permitted
+    boundary stage        reps     size    CP U95  <=alloc
+    power   screen   120,000   0.0016    0.0018      yes
+    power   confirm   50,000   0.0018    0.0022      yes
+    fpr     screen   120,000   0.0016    0.0018      yes
+    fpr     confirm   50,000   0.0017    0.0020      yes
+    falseCO screen   120,000   0.0014    0.0016      yes
+    falseCO confirm   50,000   0.0010    0.0012      yes
+    worst component CP U95 0.0022 against allocation 0.003125: all clear
+  assembled screen-escalate-retest, EVERY boundary type, at the supremum over J:
+    power   sup over J  false pass 0.0034  CP U95 0.0039  vs 0.00625: clears
+    fpr     sup over J  false pass 0.0026  CP U95 0.0030  vs 0.00625: clears
+    falseCO sup over J  false pass 0.0030  CP U95 0.0034  vs 0.00625: clears
+    largest end-to-end CP U95 over all three boundaries: 0.0039 against 0.00625: clears
+  design-power margin for an 80% chance of passing all 1728 bounds
+  (weighted simulation; the 1728 bounds treated as independent)
+    power   3.54 pp
+    fpr     2.65 pp
+    falseCO 2.65 pp
+
+keyed results written to iut_check.json; overall: PASS
